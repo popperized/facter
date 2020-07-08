@@ -8,8 +8,11 @@ ADD . /
 WORKDIR /
 
 RUN apt update && \
-    apt install -y --no-install-recommends fio=${VERSION} && \
-    pip install -r requirements.txt && \
+    apt install --no-install-recommends -y git fio=${VERSION} && \
+    git clone https://github.com/louwrentius/fio-plot && \
+    rm -rf fio-plot/images && \
+    pip install -r fio-plot/fio_plot/requirements.txt && \
+    pip install -r fio-plot/benchmark_script/requirements.txt && \
     rm -rf /var/lib/apt/lists/* && \
-    ln -s /bench_fio /usr/local/bin/bench_fio && \
-    ln -s /fio_plot /usr/local/bin/fio_plot
+    ln -s /fio-plot/benchmark_script/bench_fio /usr/local/bin/bench_fio && \
+    ln -s /fio-plot/fio_plot/fio_plot /usr/local/bin/fio_plot
