@@ -11,8 +11,7 @@ RUN apt update && \
     apt install --no-install-recommends -y git fio=${VERSION} && \
     git clone https://github.com/louwrentius/fio-plot && \
     rm -rf fio-plot/images && \
-    pip install -r fio-plot/fio_plot/requirements.txt && \
-    pip install -r fio-plot/benchmark_script/requirements.txt && \
+    pip install --no-cache-dir -r fio-plot/fio_plot/requirements.txt -r fio-plot/benchmark_script/requirements.txt && \
     rm -rf /var/lib/apt/lists/* && \
     ln -s /fio-plot/benchmark_script/bench_fio /usr/local/bin/bench_fio && \
     ln -s /fio-plot/fio_plot/fio_plot /usr/local/bin/fio_plot
