@@ -9,7 +9,7 @@ LABEL version="4.0.0"
 COPY rsession.conf /etc/rstudio 
 
 # install containerit
-RUN R -e "install.packages(\"remotes\")" \
+RUN R -e "install.packages(\"remotes\")" && \
     R -e "remotes::install_github(\"o2r-project/containerit\")"
  
 EXPOSE 8787
