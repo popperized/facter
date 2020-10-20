@@ -1,4 +1,4 @@
-FROM rocker/rstudio:4.0.0
+FROM rocker/rstudio:3.6.2
 
 LABEL maintainer="apoirel@ucsc.edu"
 LABEL description="Used as a base for Popper workflows using R, rstudio and the tidyverse"
