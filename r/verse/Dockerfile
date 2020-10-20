@@ -3,7 +3,7 @@ FROM rocker/verse:3.6.2
 LABEL maintainer="apoirel@ucsc.edu"
 LABEL description="Used as a base for Popper workflows using R and rstudio"
 # labels match the corresponding Rocker image
-LABEL version="4.0.0"
+LABEL version="3.6.2"
 
 # move configuration file where rstudio server will find it
 COPY rsession.conf /etc/rstudio 
